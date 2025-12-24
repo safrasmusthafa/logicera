@@ -1,0 +1,70 @@
+table new_sales
+	lineageTag: 1a764445-f9ce-46a9-aeb7-a6ec72a4ec87
+	sourceLineageTag: [dbo].[new_sales]
+
+	column SalesOrderNumber
+		dataType: string
+		lineageTag: 09586c08-22ac-4e54-80df-24286c70e240
+		sourceLineageTag: SalesOrderNumber
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderLineNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: a3bfc83a-1a22-40ab-ab0f-97824d84dfdb
+		sourceLineageTag: SalesOrderLineNumber
+		summarizeBy: sum
+		sourceColumn: SalesOrderLineNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b17ce367-b779-4b22-9a84-d933b64b1001
+		sourceLineageTag: OrderDate
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fde4d8a-993c-4987-910b-7d9a530a3219
+		sourceLineageTag: Quantity
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column cus_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 82cf7460-c71e-4bcf-8e75-9b9caae824e8
+		sourceLineageTag: cus_id
+		summarizeBy: none
+		sourceColumn: cus_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column item_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f8fbdda-b0ac-4971-b983-38c1e940c083
+		sourceLineageTag: item_id
+		summarizeBy: none
+		sourceColumn: item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition new_sales = entity
+		mode: directLake
+		source
+			entityName: new_sales
+			schemaName: dbo
+			expressionSource: 'DirectLake - demo1'
+

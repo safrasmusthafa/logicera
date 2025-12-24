@@ -1,0 +1,20 @@
+table meaure
+	lineageTag: f4bcd1d7-f450-4b8d-910c-c26ed84be479
+
+	column Column
+		formatString: 0
+		lineageTag: a826c0a1-2e18-4fb5-9022-b2517fc4bcef
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition meaure = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = dd2df220a607400bb4e148f2352ac83b
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

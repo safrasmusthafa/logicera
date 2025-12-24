@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "safras"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bd0d6e38-328a-9e05-46e1-627cd12f50d0"
+  }
+}

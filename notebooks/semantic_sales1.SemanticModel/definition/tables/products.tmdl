@@ -1,0 +1,52 @@
+table products
+	lineageTag: d56b5d92-adf1-4f59-9b94-66a0dbbd824d
+	sourceLineageTag: [dbo].[products]
+
+	column Item
+		dataType: string
+		lineageTag: 69996430-6ee5-4385-86b4-7052bbdcf8b8
+		sourceLineageTag: Item
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 05e65766-dbbb-40d7-bce1-a32cf7f1640f
+		sourceLineageTag: UnitPrice
+		summarizeBy: none
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TaxAmount
+		dataType: double
+		lineageTag: 77968c89-8ea1-4486-8c41-47078bacefd3
+		sourceLineageTag: TaxAmount
+		summarizeBy: none
+		sourceColumn: TaxAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Item_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3fdb1bcf-1b59-44b6-a49a-d4edc385fc65
+		sourceLineageTag: Item_id
+		summarizeBy: none
+		sourceColumn: Item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition products = entity
+		mode: directLake
+		source
+			entityName: products
+			schemaName: dbo
+			expressionSource: 'DirectLake - demo1'
+

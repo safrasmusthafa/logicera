@@ -1,0 +1,8 @@
+relationship 63186e15-7836-e707-0886-2bc7c61ed85f
+	fromColumn: new_sales.cus_id
+	toColumn: customers.cus_id
+
+relationship 100466dc-abd6-5c6e-42fa-4fac95b2874d
+	fromColumn: new_sales.item_id
+	toColumn: products.Item_id
+

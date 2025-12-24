@@ -1,0 +1,39 @@
+table customers
+	lineageTag: dd602717-da7e-4093-bd5f-e74af66541aa
+	sourceLineageTag: [dbo].[customers]
+
+	column cus_name
+		dataType: string
+		lineageTag: c66c27dd-6e21-48a4-9ce8-98908f69d47b
+		sourceLineageTag: cus_name
+		summarizeBy: none
+		sourceColumn: cus_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailAddress
+		dataType: string
+		lineageTag: 5f49d574-b993-4502-be80-ca21be8b4cf8
+		sourceLineageTag: EmailAddress
+		summarizeBy: none
+		sourceColumn: EmailAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column cus_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ffdd27f0-4181-4efd-9b4f-ff4d649e3a4b
+		sourceLineageTag: cus_id
+		summarizeBy: none
+		sourceColumn: cus_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customers = entity
+		mode: directLake
+		source
+			entityName: customers
+			schemaName: dbo
+			expressionSource: 'DirectLake - demo1'
+
